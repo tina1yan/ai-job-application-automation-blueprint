@@ -1,0 +1,3 @@
+source_alias,ats_platform,official_board_identifier,last_scanned,relevant_roles_found,guest_apply,rescan_rule,notes
+Example Board,Lever,example-board,2026-01-15,yes,yes,monthly,Use official source only
+Sample Careers,Ashby,sample-careers,2026-01-15,no,yes,quarterly,No matching roles in last scan
