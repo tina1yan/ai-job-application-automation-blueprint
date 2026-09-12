@@ -1,0 +1,32 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# Applicant data and live automation artifacts
+private/
+resumes/
+cover_letters/
+applications/
+receipts/
+screenshots/
+browser_profiles/
+checkpoints/
+runtime/
+logs/
+*.har
+*.pdf
+*.docx
+
+# Editor / OS / dependencies
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/
+__pycache__/
+*.py[cod]
