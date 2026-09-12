@@ -1,0 +1,2 @@
+run_id,started_at,ended_at,operating_cost,currency,total_confirmed_submissions,agent_confirmed_submissions,human_confirmed_submissions,pipeline_cost_per_confirmed_submission,agent_cost_per_confirmed_submission,notes
+RUN-EXAMPLE,2026-01-15T09:00:00Z,2026-01-15T10:00:00Z,4.20,USD,2,1,1,2.10,4.20,Fictional example; human submission excluded from agent denominator
