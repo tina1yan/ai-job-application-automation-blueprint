@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1",
+  "job_key": "example-company|financial-analyst|remote|REQ-123",
+  "official_url": "https://example.invalid/jobs/REQ-123",
+  "requisition_id": "REQ-123",
+  "title": "Financial Analyst",
+  "location": "Remote",
+  "screening": {
+    "effort_tier": "B",
+    "recommendation": "APPLY",
+    "hard_blockers": [],
+    "confidence": "high"
+  },
+  "approved_fact_refs": ["FACT-EXAMPLE-001"],
+  "unresolved_questions": [],
+  "source_refs": ["official_job_page"],
+  "status": "SCREENED"
+}
