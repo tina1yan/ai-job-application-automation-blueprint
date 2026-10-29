@@ -27,7 +27,17 @@ Workday careers pages often look alike. A saved login for fictional employer A m
 - **First:** deterministic browser controls (Playwright, accessible DOM locators, existing form recipes) and approved JSON fact/answer lookups. No model reasoning for known field labels and values.
 - **Then:** optionally a local UI vision executor such as UI-TARS for a visual-only control, after observing the live page. A local vision model can still be wrong; verify what changed.
 - **Only when necessary:** a reasoning model for genuinely unknown wording, page classification, or exceptional forms. It cannot invent personal facts or authorize protected actions.
-- **Optional last resort:** a quota-based hosted tool such as TinyFish for a bounded, permitted task. Never make the flow dependent on having credits, and do not switch tools to evade CAPTCHA, denial, or quota enforcement.
+- **Tool boundary:** This ATS registration/application route does **not** depend on TinyFish. In the owner's workflow, TinyFish is used for a separate website-deployment / Google Search Console task. Keep that workflow separate from local UI-TARS job-application automation.
+
+## Learn from unknown application questions (private answer bank)
+
+When a job form contains a new question, normalize the field label and intent, then classify the proposed answer **before** storing it:
+
+- **Approved fact:** an exact, source-linked and current personal fact. It may be deterministically reused within its allowed scope.
+- **Contextual answer pattern:** a truthful but interpretive response (e.g. motivation, leadership example, process improvement, or a company's culture). Store the prompt, candidate answer, supporting fact references, applicable role/company context, date, approval state, and alternatives. Do not present it as a timeless fact or paste it blindly into unrelated vacancies.
+- **Unknown or sensitive:** missing facts, identity/authorization statements, legal attestations, or unsupported claims. Queue for human review; no fabricated answer or silent selection.
+
+Only promote a contextual answer to the private reuse library after the applicant approves the wording and scope. On recurrence, check context/expiry before autofill; if fit is uncertain, ask the reasoning model for a grounded adaptation or hand off. Never publish private answer content in this repository.
 
 ## Home test matrix (non-production or authorized sandbox first)
 
