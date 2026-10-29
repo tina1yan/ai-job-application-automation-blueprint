@@ -247,4 +247,10 @@ MIT licensed. This project is an educational blueprint, not legal advice and not
 
 [Complete Browser Task](skills/complete-browser-task/SKILL.md) is the reusable, separately installable ChatGPT Skill for handling authorized multi-step recruitment and application websites. It coordinates account setup handoffs, ATS forms, save/resume checkpoints, and verification without assuming permission to bypass CAPTCHA, MFA, or other approval gates. Its [TinyFish integration notes](skills/complete-browser-task/references/tinyfish.md) are included.
 
-This is a supervision workflow, not a turnkey unattended job-application bot, and it does not carry saved credentials or a signed-in session.
+The [ATS account entry and registration guide](skills/complete-browser-task/references/ats-account-registration.md) now documents a real-world Workday failure mode: a browser may suggest a saved login from a *different employer's* tenant. Match the employer and tenant before selecting browser autofill; make one bounded attempt, then decide between normal account recovery and Create Account without guessing credentials or creating duplicates.
+
+For job applications, the intended inexpensive route is **deterministic Playwright / approved profile JSON → optional local UI-TARS for difficult visual controls → a reasoning model only for unfamiliar questions**. TinyFish is used in the author's **separate website-deployment / Google Search Console** workflow, not as a required job-registration dependency.
+
+Every new application question can enter a **private answer-knowledge queue**. Verifiable facts and contextual/interpretive career answers have different rules: the latter require relevant job context, supporting sources, scope, and approval before being reused.
+
+This is a supervision workflow, not a turnkey unattended job-application bot, and it does not carry saved credentials or a signed-in session. The reported RTX 4090/UI-TARS registration test is user-observed; it is not a publicly reproducible end-to-end ATS test.
