@@ -1,4 +1,8 @@
-# AI Job Application Automation Blueprint 🤖📮
+# AI Job Auto Apply — DSF4.1 大肥鱼 🐟 | Public Blueprint
+
+> Historical project family and sanitized reference architecture—not the original runnable DeepSeek/BigFish code and not the author's private live application runtime.
+
+[How the architecture evolved and what failed](docs/EVOLUTION.md) · **GitHub = public processes; private knowledge and records stay outside this repo.**
 
 > A privacy-first, human-in-the-loop control plane for AI-assisted job applications.
 
