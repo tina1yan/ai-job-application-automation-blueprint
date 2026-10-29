@@ -1,6 +1,6 @@
 ---
 name: complete-browser-task
-description: Complete an authorized website workflow by coordinating navigation, clicking, form filling, asynchronous waits, recovery and outcome verification. Use for multi-step web forms, dashboard configuration, submissions, bookings, account setup, or resuming a stalled browser task. Use when the user asks to finish a browser task autonomously or bundle its steps into one workflow. Prefer sufficient service connectors; use TinyFish or an available browser when interaction is needed. This skill does not supply a browser, credentials or extra permissions.
+description: Complete an authorized website workflow by coordinating navigation, clicking, form filling, asynchronous waits, recovery and outcome verification. Use for multi-step web forms, dashboard configuration, submissions, bookings, account setup (including ATS/Workday login, registration, saved-password suggestions and email verification), or resuming a stalled browser task. Use when the user asks to finish a browser task autonomously or bundle its steps into one workflow. Prefer sufficient connectors, deterministic browser automation and authorized local UI executors for ATS forms; TinyFish may be appropriate for a separate website deployment/Search Console workflow, but is not required for job-account registration. This skill does not supply a browser, credentials or extra permissions.
 ---
 
 # Complete browser task
@@ -28,7 +28,8 @@ Inspect available capabilities and their current documentation before use.
 2. Otherwise prefer a sufficient service-specific connector or supported API.
 3. For browser interactions, inspect applicable saved profiles/session metadata before initiating login. Match the site and authorized account scope; a friendly profile name alone does not prove sign-in.
 4. Reuse an applicable signed-in session within the provider's documented mechanism. Do not extract cookies, credentials or tokens or transfer them across tools. A saved sign-in may have expired.
-5. Use TinyFish for a supported, bounded website workflow when available and appropriate; read [references/tinyfish.md](references/tinyfish.md). Otherwise use the selected browser's skill and documented API.
+5. For employer ATS login or account registration, **read [references/ats-account-registration.md](references/ats-account-registration.md)**. Match the employer/tenant before selecting any password-manager suggestion; use a bounded verified sign-in attempt and check whether an account exists before Create Account. Prefer deterministic browser automation and, where available, an authorized local visual executor such as UI-TARS for unfamiliar controls.
+6. For a *separate* website deployment or Google Search Console workflow, TinyFish may be appropriate when available, permitted, and quota allows; read [references/tinyfish.md](references/tinyfish.md). Do not route ATS applications to TinyFish by default or make the workflow dependent on its credits.
 
 Do not equate one browser's authentication timeout with a global inability to do the task. Check other already-authorized, suitable routes when their rules permit it. If a provider requires approval before fallback, obtain it; do not use tool switching to bypass an access denial, CAPTCHA, quota or security control. Distinguish a different valid session from circumventing a restriction.
 
@@ -38,7 +39,7 @@ Give a brief progress update, then execute dependent steps sequentially. Batch i
 
 For an autonomous browser tool, send a concrete goal containing the target, necessary inputs, authorized actions, success criteria and stop conditions. Do not send a long speculative sequence of coordinates or selectors. For a direct browser, use an observe → act → observe loop grounded in the current page. Re-read after navigation, modal changes or failures; do not reuse stale selectors blindly.
 
-Fill and validate fields, resolve routine validation errors, submit only within authorization, then inspect the confirmation or resulting resource. Before retrying a side-effecting step after timeout, determine whether it already succeeded. Check the destination record/history or a provider-supported idempotency key; never duplicate a submission just because confirmation was missed.
+Fill and validate fields using approved facts and answer patterns, resolve routine validation errors, submit only within authorization, then inspect the confirmation or resulting resource. For an unknown application question, capture the normalized wording and classify it as a sourced fact, contextual answer pattern, or human-only unknown; only approved, context-compatible answers may be reused. See the private answer-bank rules in the ATS account reference. Before retrying a side-effecting step after timeout, determine whether it already succeeded. Check the destination record/history or a provider-supported idempotency key; never duplicate a submission just because confirmation was missed.
 
 Keep a minimal task checkpoint in the active workspace for long or interrupted work:
 
