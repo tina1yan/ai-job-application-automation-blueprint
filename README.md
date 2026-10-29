@@ -242,3 +242,9 @@ Please use fictional or redacted examples. Do not post personal applicant data i
 ## License and disclaimer
 
 MIT licensed. This project is an educational blueprint, not legal advice and not a guarantee of employment or ATS compatibility. You are responsible for how you connect it to live services and for every application submitted in your name.
+
+## Complete Browser Task — companion Skill
+
+[Complete Browser Task](skills/complete-browser-task/SKILL.md) is the reusable, separately installable ChatGPT Skill for handling authorized multi-step recruitment and application websites. It coordinates account setup handoffs, ATS forms, save/resume checkpoints, and verification without assuming permission to bypass CAPTCHA, MFA, or other approval gates. Its [TinyFish integration notes](skills/complete-browser-task/references/tinyfish.md) are included.
+
+This is a supervision workflow, not a turnkey unattended job-application bot, and it does not carry saved credentials or a signed-in session.

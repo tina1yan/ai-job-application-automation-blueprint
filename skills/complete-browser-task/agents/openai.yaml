@@ -1,0 +1,14 @@
+interface:
+  display_name: Complete Browser Task
+  short_description: Navigate, fill, wait, recover, and verify web tasks
+  default_prompt: Use $complete-browser-task to complete this authorized website workflow,
+    preserve progress, and verify the final result.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
